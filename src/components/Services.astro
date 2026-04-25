@@ -1,0 +1,80 @@
+---
+import { services, contacts } from "@/content";
+---
+
+<section id="services" class="py-24 md:py-32 bg-sand/40">
+  <div class="container-x">
+    <div class="max-w-2xl mb-16">
+      <p class="text-xs uppercase tracking-[0.25em] text-accent mb-5">Услуги</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight">
+        Три направления — для разных задач
+      </h2>
+    </div>
+
+    <div class="space-y-6">
+      {
+        services.map((svc, i) => (
+          <article
+            id={svc.id}
+            class="group bg-cream border border-line p-8 md:p-12 transition hover:border-accent/60"
+          >
+            <div class="grid md:grid-cols-12 gap-8 md:gap-12">
+              <div class="md:col-span-5">
+                <div class="font-display text-6xl text-accent/30 leading-none mb-4 tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <p class="text-xs uppercase tracking-[0.25em] text-accent mb-3">
+                  {svc.kicker}
+                </p>
+                <h3 class="font-display text-3xl md:text-4xl leading-tight mb-4">
+                  {svc.title}
+                </h3>
+                <p class="text-ink-soft leading-relaxed">{svc.lead}</p>
+              </div>
+
+              <div class="md:col-span-7">
+                {svc.points && (
+                  <ul class="space-y-3">
+                    {svc.points.map((p) => (
+                      <li class="flex gap-3 text-ink-soft leading-relaxed">
+                        <span class="text-accent mt-1.5 flex-none">·</span>
+                        <span>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {svc.packages && (
+                  <div class="space-y-6">
+                    {svc.packages.map((pkg) => (
+                      <div class="border-l-2 border-accent pl-5">
+                        <div class="font-display text-xl mb-1">{pkg.name}</div>
+                        <p class="text-sm text-ink-soft mb-3 italic">{pkg.desc}</p>
+                        <ul class="space-y-2 text-sm">
+                          {pkg.steps.map((s) => (
+                            <li class="flex gap-2 text-ink-soft">
+                              <span class="text-accent flex-none">·</span>
+                              <span>{s}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                <a
+                  href={contacts.whatsapp}
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-2 mt-8 text-ink hover:text-accent transition"
+                >
+                  Обсудить задачу
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

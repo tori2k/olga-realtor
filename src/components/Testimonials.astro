@@ -1,0 +1,29 @@
+---
+import { testimonials } from "@/content";
+---
+
+<section class="py-24 md:py-32 bg-cream">
+  <div class="container-x">
+    <div class="max-w-2xl mb-16">
+      <p class="text-xs uppercase tracking-[0.25em] text-accent mb-5">Отзывы</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight">Что говорят клиенты</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {
+        testimonials.map((t) => (
+          <figure class="bg-sand/50 p-8 border border-line">
+            <div class="font-display text-5xl text-accent leading-none mb-4">“</div>
+            <blockquote class="text-ink-soft leading-relaxed mb-6">
+              {t.text}
+            </blockquote>
+            <figcaption class="pt-5 border-t border-line">
+              <div class="text-ink">{t.name}</div>
+              <div class="text-sm text-ink-soft mt-1">{t.deal}</div>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

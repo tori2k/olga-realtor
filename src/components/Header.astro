@@ -1,0 +1,24 @@
+---
+import { contacts } from "@/content";
+---
+
+<header class="absolute top-0 left-0 right-0 z-30">
+  <div class="container-x flex items-center justify-between py-6">
+    <a href="/" class="font-display text-xl tracking-wide text-ink">
+      Ольга&nbsp;Левчук
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-ink-soft">
+      <a href="#about" class="hover:text-accent transition">Обо мне</a>
+      <a href="#services" class="hover:text-accent transition">Услуги</a>
+      <a href="#process" class="hover:text-accent transition">Как я работаю</a>
+      <a href="#cases" class="hover:text-accent transition">Кейсы</a>
+      <a href="#faq" class="hover:text-accent transition">Вопросы</a>
+    </nav>
+    <a
+      href={contacts.phoneHref}
+      class="hidden md:inline-block text-sm text-ink hover:text-accent transition tabular-nums"
+    >
+      {contacts.phone}
+    </a>
+  </div>
+</header>

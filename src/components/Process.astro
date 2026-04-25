@@ -1,0 +1,28 @@
+---
+import { stages } from "@/content";
+---
+
+<section id="process" class="py-24 md:py-32 bg-cream">
+  <div class="container-x">
+    <div class="max-w-2xl mb-16">
+      <p class="text-xs uppercase tracking-[0.25em] text-accent mb-5">Как я работаю</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight">
+        От первого разговора до&nbsp;ключей — пять этапов
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-5 gap-8 md:gap-6">
+      {
+        stages.map((s) => (
+          <div class="relative">
+            <div class="font-display text-5xl text-accent/40 mb-4 tabular-nums">
+              {s.n}
+            </div>
+            <h3 class="font-display text-xl md:text-2xl mb-3">{s.title}</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">{s.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

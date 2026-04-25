@@ -1,0 +1,15 @@
+---
+import { contacts } from "@/content";
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-ink text-cream/60 border-t border-cream/10">
+  <div class="container-x py-10 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center text-sm">
+    <div>© {year} · Ольга Левчук. Эксперт по недвижимости в Москве.</div>
+    <div class="flex gap-6">
+      <a href={contacts.phoneHref} class="hover:text-accent transition tabular-nums">{contacts.phone}</a>
+      <a href={contacts.telegram} target="_blank" rel="noopener" class="hover:text-accent transition">Telegram</a>
+      <a href={contacts.whatsapp} target="_blank" rel="noopener" class="hover:text-accent transition">WhatsApp</a>
+    </div>
+  </div>
+</footer>
