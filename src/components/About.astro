@@ -1,5 +1,6 @@
 ---
 import { stats } from "@/content";
+const olgaPhoto = `${import.meta.env.BASE_URL}/images/olga.png`.replace(/\/+/g, "/");
 ---
 
 <section id="about" class="py-24 md:py-32 bg-cream">
@@ -9,7 +10,7 @@ import { stats } from "@/content";
       <div class="md:col-span-5">
         <div class="relative aspect-[4/5] overflow-hidden bg-sand">
           <img
-            src="/images/olga.png"
+            src={olgaPhoto}
             alt="Ольга Левчук"
             class="h-full w-full object-cover object-top"
             loading="lazy"
