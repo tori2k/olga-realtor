@@ -2,15 +2,15 @@
 import { contacts } from "@/content";
 ---
 
-<section id="contact" class="py-24 md:py-32 bg-ink text-cream">
+<section id="contact" class="py-24 md:py-32 bg-cream/50">
   <div class="container-x">
     <div class="grid md:grid-cols-12 gap-12 lg:gap-16 items-start">
       <div class="md:col-span-7">
         <p class="text-xs uppercase tracking-[0.25em] text-accent mb-5">Записаться</p>
-        <h2 class="font-display text-4xl md:text-6xl leading-[1.05] mb-8">
+        <h2 class="font-display text-4xl md:text-6xl leading-[1.05] mb-8 text-ink">
           Первая консультация — <span class="italic text-accent">бесплатно</span>
         </h2>
-        <p class="text-cream/75 text-lg leading-relaxed max-w-xl mb-10">
+        <p class="text-ink-soft text-lg leading-relaxed max-w-xl mb-10">
           30–40 минут разговора. Слушаю задачу, отвечаю на вопросы по&nbsp;рынку,
           ориентирую по&nbsp;срокам и&nbsp;стоимости. Без обязательств.
         </p>
@@ -20,25 +20,25 @@ import { contacts } from "@/content";
             href={contacts.whatsapp}
             target="_blank"
             rel="noopener"
-            class="flex items-center justify-between gap-4 px-6 py-5 bg-cream text-ink hover:bg-accent transition group"
+            class="flex items-center justify-between gap-4 px-6 py-5 bg-ink text-paper hover:bg-accent transition group"
           >
             <span class="text-lg">Написать в WhatsApp</span>
-            <span class="text-accent group-hover:text-ink transition">→</span>
+            <span class="text-paper group-hover:translate-x-1 transition">→</span>
           </a>
           <a
             href={contacts.telegram}
             target="_blank"
             rel="noopener"
-            class="flex items-center justify-between gap-4 px-6 py-5 border border-cream/20 hover:border-accent transition group"
+            class="flex items-center justify-between gap-4 px-6 py-5 border border-line hover:border-accent transition group bg-paper"
           >
-            <span class="text-lg">Написать в Telegram</span>
+            <span class="text-lg text-ink">Написать в Telegram</span>
             <span class="text-accent group-hover:translate-x-1 transition">→</span>
           </a>
           <a
             href={contacts.phoneHref}
-            class="flex items-center justify-between gap-4 px-6 py-5 border border-cream/20 hover:border-accent transition group"
+            class="flex items-center justify-between gap-4 px-6 py-5 border border-line hover:border-accent transition group bg-paper"
           >
-            <span class="text-lg tabular-nums">{contacts.phone}</span>
+            <span class="text-lg tabular-nums text-ink">{contacts.phone}</span>
             <span class="text-accent group-hover:translate-x-1 transition">→</span>
           </a>
         </div>
@@ -46,10 +46,10 @@ import { contacts } from "@/content";
 
       <div class="md:col-span-5 md:mt-20">
         <p class="text-xs uppercase tracking-[0.25em] text-accent mb-5">Заметки агента</p>
-        <h3 class="font-display text-2xl md:text-3xl leading-tight mb-5">
+        <h3 class="font-display text-2xl md:text-3xl leading-tight mb-5 text-ink">
           Веду блог о&nbsp;московском рынке
         </h3>
-        <p class="text-cream/75 leading-relaxed mb-6">
+        <p class="text-ink-soft leading-relaxed mb-6">
           Разборы сделок, изменения в&nbsp;законодательстве, новостройки,
           практические советы покупателям и&nbsp;продавцам.
         </p>
@@ -58,7 +58,7 @@ import { contacts } from "@/content";
             href={contacts.dzen}
             target="_blank"
             rel="noopener"
-            class="flex items-center justify-between py-3 border-t border-cream/15 hover:text-accent transition"
+            class="flex items-center justify-between py-3 border-t border-line text-ink-soft hover:text-accent transition"
           >
             <span>Дзен · Заметки агента</span>
             <span aria-hidden="true">→</span>
@@ -67,7 +67,7 @@ import { contacts } from "@/content";
             href={contacts.channel}
             target="_blank"
             rel="noopener"
-            class="flex items-center justify-between py-3 border-t border-cream/15 hover:text-accent transition"
+            class="flex items-center justify-between py-3 border-t border-line text-ink-soft hover:text-accent transition"
           >
             <span>Telegram-канал</span>
             <span aria-hidden="true">→</span>
@@ -76,7 +76,7 @@ import { contacts } from "@/content";
             href={contacts.vk}
             target="_blank"
             rel="noopener"
-            class="flex items-center justify-between py-3 border-t border-cream/15 border-b hover:text-accent transition"
+            class="flex items-center justify-between py-3 border-t border-line border-b text-ink-soft hover:text-accent transition"
           >
             <span>ВКонтакте</span>
             <span aria-hidden="true">→</span>

@@ -1,0 +1,45 @@
+---
+import { services } from "@/content";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const links: Record<string, string> = {
+  sell: `${base}/sell`,
+  buy: `${base}/buy`,
+  "new-buildings": `${base}/new-buildings`,
+};
+---
+
+<section id="services" class="py-24 md:py-32 bg-sand/40">
+  <div class="container-x">
+    <div class="max-w-2xl mb-14">
+      <p class="text-xs uppercase tracking-[0.25em] text-accent mb-5">Услуги</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight text-ink">
+        Три направления — для разных задач
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {
+        services.map((svc, i) => (
+          <a
+            href={links[svc.id]}
+            class="group flex flex-col bg-paper border border-line p-8 md:p-10 transition hover:border-accent/60 hover:shadow-sm"
+          >
+            <div class="font-display text-5xl text-accent/30 leading-none mb-5 tabular-nums">
+              {String(i + 1).padStart(2, "0")}
+            </div>
+            <p class="text-xs uppercase tracking-[0.25em] text-accent mb-3">{svc.kicker}</p>
+            <h3 class="font-display text-2xl md:text-3xl leading-tight mb-4 text-ink">
+              {svc.title}
+            </h3>
+            <p class="text-ink-soft leading-relaxed mb-8 flex-1">{svc.lead}</p>
+            <span class="inline-flex items-center gap-2 text-ink group-hover:text-accent transition">
+              Подробнее
+              <span aria-hidden="true" class="transition group-hover:translate-x-1">→</span>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

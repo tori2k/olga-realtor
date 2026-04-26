@@ -2,11 +2,11 @@
 import { cases } from "@/content";
 ---
 
-<section id="cases" class="py-24 md:py-32 bg-ink text-cream">
+<section id="cases" class="py-24 md:py-32 bg-cream/40">
   <div class="container-x">
     <div class="max-w-2xl mb-16">
       <p class="text-xs uppercase tracking-[0.25em] text-accent mb-5">Кейсы</p>
-      <h2 class="font-display text-4xl md:text-5xl leading-tight">
+      <h2 class="font-display text-4xl md:text-5xl leading-tight text-ink">
         Несколько недавних сделок
       </h2>
     </div>
@@ -15,7 +15,7 @@ import { cases } from "@/content";
       {
         cases.map((c) => (
           <article class="group">
-            <div class="aspect-[4/3] overflow-hidden bg-ink-soft mb-5">
+            <div class="aspect-[4/3] overflow-hidden bg-sand mb-5">
               <img
                 src={c.image}
                 alt={c.title}
@@ -24,14 +24,14 @@ import { cases } from "@/content";
               />
             </div>
             <p class="font-display text-2xl text-accent mb-2">{c.result}</p>
-            <h3 class="text-lg mb-2">{c.title}</h3>
-            <p class="text-sm text-cream/70 leading-relaxed">{c.description}</p>
+            <h3 class="text-lg mb-2 text-ink">{c.title}</h3>
+            <p class="text-sm text-ink-soft leading-relaxed">{c.description}</p>
           </article>
         ))
       }
     </div>
 
-    <p class="text-sm text-cream/40 italic mt-10">
+    <p class="text-sm text-ink-mute italic mt-10">
       Подробности по конкретным сделкам — на встрече. Имена и адреса не раскрываю.
     </p>
   </div>
