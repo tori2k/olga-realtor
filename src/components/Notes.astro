@@ -1,0 +1,64 @@
+---
+import { notes, contacts } from "@/content";
+---
+
+<section id="notes" class="py-24 md:py-32 bg-paper">
+  <div class="container-x">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
+      <div class="max-w-2xl">
+        <p class="text-xs uppercase tracking-[0.25em] text-accent mb-5">Заметки агента</p>
+        <h2 class="font-display text-4xl md:text-5xl leading-tight text-ink">
+          Честно о&nbsp;рынке —
+          <span class="italic text-accent">в&nbsp;моём канале</span>
+        </h2>
+        <p class="text-ink-soft leading-relaxed mt-5">
+          Разборы сделок, типовые ошибки покупателей и&nbsp;продавцов, обзоры
+          новостроек и&nbsp;районов. Без воды и&nbsp;маркетингового глянца.
+        </p>
+      </div>
+      <div class="flex gap-3 flex-none">
+        <a
+          href={contacts.channel}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 px-5 py-3 border border-line text-ink hover:border-accent hover:text-accent transition"
+        >
+          Telegram
+          <span aria-hidden="true">→</span>
+        </a>
+        <a
+          href={contacts.dzen}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 px-5 py-3 border border-line text-ink hover:border-accent hover:text-accent transition"
+        >
+          Дзен
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {
+        notes.map((n, i) => (
+          <a
+            href={contacts.channel}
+            target="_blank"
+            rel="noopener"
+            class="group flex gap-6 bg-cream/40 border border-line p-6 md:p-8 hover:border-accent/60 transition"
+          >
+            <div class="font-display text-3xl md:text-4xl text-accent/40 leading-none tabular-nums flex-none">
+              {String(i + 1).padStart(2, "0")}
+            </div>
+            <div class="flex-1">
+              <h3 class="font-display text-xl md:text-2xl leading-snug text-ink mb-3 group-hover:text-accent transition">
+                {n.title}
+              </h3>
+              <p class="text-sm text-ink-soft leading-relaxed">{n.teaser}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
